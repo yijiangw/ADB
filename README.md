@@ -26,3 +26,19 @@ adb 查看录像文件
 
     total 183168
     -rw-rw---- 1 root sdcard_rw 187552069 2018-01-03 12:22 VID_20180103_122003.mp4
+
+adb 删除录像文件
+
+    adb -s FA68W0312642 shell rm mnt/sdcard/DCIM/Camera/VID_20180103_122003.mp4
+
+adb 传回录像文件
+
+    adb -s FA68W0312642 pull mnt/sdcard/DCIM/Camera/VID_20180103_122003.mp4 /C0/Yijiang/a1+TIMESTAMP.mp4
+
+ADB 截屏保存
+
+    adb -s FA68B0301761  exec-out screencap -p > x.png
+
+ADB 传回文件
+
+    adb -s FA68B0301761  exec-out screencap -p > x.png
