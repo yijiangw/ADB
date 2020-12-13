@@ -42,3 +42,19 @@ ADB 截屏保存
 adb 点击坐标
 
 adb -s FA68B0301761 shell input tap 1017 60
+
+adb 所有设备
+
+    adb devices
+
+    List of devices attached
+    84B7N16307001706        C9
+    84B7N16506004336        C8
+    84B7N16506004393        C7
+    FA68B0301761    C4
+    FA68S0304949    C5
+    FA68V0300393    C3
+    FA68W0312642    C6
+    FA71J0301472    C2 
+    FA7530302218    C1
+    FA75K0301214    C10
