@@ -20,7 +20,10 @@ processes=set()
 if __name__=='__main__':
     request=sys.argv[1]
     device_name=sys.argv[2].upper()
-    name_list=['C'+s for s in device_name.split('C') if s.isdigit()]
+    if device_name=='ALL':
+        name_list=[s for s in device_list]
+    else:
+        name_list=['C'+s for s in device_name.split('C') if s.isdigit()]
     #print(name_list)
     if request=='wake_up':
         for device_name in name_list:
