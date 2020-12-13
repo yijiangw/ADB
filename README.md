@@ -38,7 +38,3 @@ adb 传回录像文件
 ADB 截屏保存
 
     adb -s FA68B0301761  exec-out screencap -p > x.png
-
-ADB 传回文件
-
-    adb -s FA68B0301761  exec-out screencap -p > x.png
