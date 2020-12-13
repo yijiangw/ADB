@@ -1,12 +1,12 @@
 # ADB
 唤起：
 
-    adb shell input keyevent 224
+    adb -s FA68W0312642 shell input keyevent 224
 [![reG0PI.png](https://s3.ax1x.com/2020/12/13/reG0PI.png)](https://imgchr.com/i/reG0PI)
 
 adb 唤起后滑动解锁：
 
-    adb shell input swipe 300 1000 300 500
+    adb -s FA68W0312642 shell input swipe 300 1000 300 500
 [![reGBGt.png](https://s3.ax1x.com/2020/12/13/reGBGt.png)](https://imgchr.com/i/reGBGt)
 
 adb 开始打开录像机
@@ -38,3 +38,7 @@ adb 传回录像文件
 ADB 截屏保存
 
     adb -s FA68B0301761  exec-out screencap -p > x.png
+
+adb 点击坐标
+
+adb -s FA68B0301761 shell input tap 1017 60
