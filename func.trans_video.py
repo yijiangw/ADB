@@ -33,7 +33,7 @@ if __name__=='__main__':
         if s in out2_list:
             video_name=s.split(' ')[-1].strip()
             print('\n\ncopy %s:%s'%(device_name, video_name))
-            os.system('adb -s %s pull mnt/sdcard/DCIM/Camera/%s ./%s/ > %s.log'%(device_id, video_name, device_name, device_name))
+            os.system('adb -s %s pull mnt/sdcard/DCIM/Camera/%s %s > %s.log'%(device_id, video_name, device_name, device_name))
             outmp=subprocess.check_output(seg).decode('utf-8')
             outmp_list=[l for l in outmp.split('\n') if l[-4:]=='.mp4']
             #print('s:', s)
