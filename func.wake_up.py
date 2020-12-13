@@ -30,3 +30,6 @@ if __name__=='__main__':
     os.system(text)
     #seg=text.split(' ')
     #processes.add(subprocess.Popen(seg))
+    time.sleep(2)
+    text='adb -s %s shell input keyevent 3'%(device_id)
+    os.system(text)
