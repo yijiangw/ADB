@@ -46,6 +46,9 @@ if __name__=='__main__':
     elif request=='trans_video':
         for device_name in name_list:
             processes.add(subprocess.Popen(['python', 'func.trans_video.py', device_name]))
+    elif request=='key':
+        for device_name in name_list:
+            processes.add(subprocess.Popen(['python', 'func.key.py', device_name, sys.argv[3]]))
     elif request=='exception':
         for device_name in name_list:
             processes.add(subprocess.Popen(['python', 'func.exception.py', device_name]))
