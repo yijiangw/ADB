@@ -25,8 +25,11 @@ if __name__=='__main__':
         text='adb -s %s shell input keyevent 24'%(device_id)
         os.system(text)
         time.sleep(2)
-        text='adb -s %s shell input keyevent 24'%(device_id)
+        text='adb -s %s shell input tap 980 2400'%(device_id)
         os.system(text)
+        # time.sleep(1)
+        # text='adb -s %s shell input keyevent 3'%(device_id)
+        # os.system(text)
     else:
         text='adb -s %s shell input keyevent 24'%(device_id)
         os.system(text)
