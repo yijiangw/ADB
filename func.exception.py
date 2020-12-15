@@ -26,7 +26,7 @@ if __name__=='__main__':
     #seg=text.split(' ')
     #processes.add(subprocess.Popen(seg))
     time.sleep(2)
-    text='adb -s %s shell input swipe 300 1000 300 500'%(device_id)
+    text='adb -s %s shell input swipe 400 1000 400 500'%(device_id)
     os.system(text)
     #seg=text.split(' ')
     #processes.add(subprocess.Popen(seg))
