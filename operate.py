@@ -49,6 +49,9 @@ if __name__=='__main__':
     elif request=='key':
         for device_name in name_list:
             processes.add(subprocess.Popen(['python', 'func.key.py', device_name, sys.argv[3]]))
+    elif request=='carmera':
+        for device_name in name_list:
+            processes.add(subprocess.Popen(['python', 'func.carmera.py', device_name]))
     elif request=='exception':
         for device_name in name_list:
             processes.add(subprocess.Popen(['python', 'func.exception.py', device_name]))
