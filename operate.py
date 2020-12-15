@@ -44,8 +44,10 @@ if __name__=='__main__':
         for device_name in name_list:
             processes.add(subprocess.Popen(['python', 'func.list_video.py', device_name]))
     elif request=='trans_video':
+        folder=str(int(time.time()))
+        os.system('mkdir %s'%(folder))
         for device_name in name_list:
-            processes.add(subprocess.Popen(['python', 'func.trans_video.py', device_name]))
+            processes.add(subprocess.Popen(['python', 'func.trans_video.py', device_name, folder]))
     elif request=='key':
         for device_name in name_list:
             processes.add(subprocess.Popen(['python', 'func.key.py', device_name, sys.argv[3]]))

@@ -19,9 +19,10 @@ device_list=['C1','C2','C3','C4','C5','C6','C7','C8','C9','C10']
 
 if __name__=='__main__':
     device_name=sys.argv[1]
+    folder_name=sys.argv[2]
     assert device_name in device_list
     device_id=device_dict[device_name]
-    os.system('mkdir %s'%(device_name))
+    os.system('mkdir %s/%s'%(forler_name, device_name))
     text='adb -s %s shell ls -l mnt/sdcard/DCIM/Camera'%(device_id)
     seg=text.split(' ')
     out1=subprocess.check_output(seg).decode('utf-8')
@@ -33,7 +34,7 @@ if __name__=='__main__':
         if s in out2_list:
             video_name=s.split(' ')[-1].strip()
             print('\n\ncopy %s:%s'%(device_name, video_name))
-            os.system('adb -s %s pull mnt/sdcard/DCIM/Camera/%s %s > %s.log'%(device_id, video_name, device_name, device_name))
+            os.system('adb -s %s pull mnt/sdcard/DCIM/Camera/%s %s/%s > %s.log'%(device_id, video_name, folder_name, device_name, device_name))
             outmp=subprocess.check_output(seg).decode('utf-8')
             outmp_list=[l for l in outmp.split('\r\n') if l[-4:]=='.mp4']
             #print('s:', s)
