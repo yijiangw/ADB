@@ -21,8 +21,15 @@ if __name__=='__main__':
     device_name=sys.argv[1]
     assert device_name in device_list
     device_id=device_dict[device_name]
-    text='adb -s %s shell input keyevent 24'%(device_id)
-    os.system(text)
-    time.sleep(2)
-    text='adb -s %s shell input keyevent 24'%(device_id)
-    os.system(text)
+    if device_name in ['C7', 'C8', 'C9']:
+        text='adb -s %s shell input keyevent 24'%(device_id)
+        os.system(text)
+        time.sleep(2)
+        text='adb -s %s shell input keyevent 24'%(device_id)
+        os.system(text)
+    else:
+        text='adb -s %s shell input keyevent 24'%(device_id)
+        os.system(text)
+        time.sleep(2)
+        text='adb -s %s shell input keyevent 24'%(device_id)
+        os.system(text)
