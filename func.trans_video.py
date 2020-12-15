@@ -22,7 +22,7 @@ if __name__=='__main__':
     folder_name=sys.argv[2]
     assert device_name in device_list
     device_id=device_dict[device_name]
-    os.system('mkdir %s/%s'%(forler_name, device_name))
+    os.system('mkdir %s\\%s'%(folder_name, device_name))
     text='adb -s %s shell ls -l mnt/sdcard/DCIM/Camera'%(device_id)
     seg=text.split(' ')
     out1=subprocess.check_output(seg).decode('utf-8')
