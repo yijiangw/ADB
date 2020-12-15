@@ -32,7 +32,8 @@ if __name__=='__main__':
     time.sleep(2)
     text='adb -s %s shell input swipe 300 1000 300 500'%(device_id)
     os.system(text)
-
+    text='adb -s %s shell input keyevent 3'%(device_id)
+    os.system(text)
     time.sleep(2)
     text='adb -s %s shell input tap 1250 2100'%(device_id)
     time.sleep(2)

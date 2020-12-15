@@ -22,6 +22,7 @@ if __name__=='__main__':
     assert device_name in device_list
     device_id=device_dict[device_name]
     text='adb -s %s shell am start -a android.media.action.VIDEO_CAPTURE'%(device_id)
+    # text='adb -s %s shell am start -a android.media.action.VIDEO_CAMERA'%(device_id)     
     os.system(text)
     #seg=text.split(' ')
     #processes.add(subprocess.Popen(seg))
