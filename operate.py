@@ -25,25 +25,28 @@ if __name__=='__main__':
     else:
         name_list=['C'+s for s in device_name.split('C') if s.isdigit()]
     #print(name_list)
-    if request=='wake_up':
+    if request=='wake_up' or request=='wake':
         for device_name in name_list:
             processes.add(subprocess.Popen(['python', 'func.wake_up.py', device_name]))
-    elif request=='open_camera':
+    elif request=='open_camera' or request=='open':
         for device_name in name_list:
             processes.add(subprocess.Popen(['python', 'func.open_camera.py', device_name]))
+    elif request=='start':
+        for device_name in name_list:
+            processes.add(subprocess.Popen(['python', 'func.menu_start_video.py', device_name]))
     elif request=='start_video':
         for device_name in name_list:
             processes.add(subprocess.Popen(['python', 'func.start_video.py', device_name]))
-    elif request=='end_video':
+    elif request=='end_video' or request=='end':
         for device_name in name_list:
             processes.add(subprocess.Popen(['python', 'func.end_video.py', device_name]))
-    elif request=='screen_cap':
+    elif request=='screen_cap' or request=='cap':
         for device_name in name_list:
             processes.add(subprocess.Popen(['python', 'func.screen_cap.py', device_name]))
-    elif request=='list_video':
+    elif request=='list_video' or request=='list':
         for device_name in name_list:
             processes.add(subprocess.Popen(['python', 'func.list_video.py', device_name]))
-    elif request=='trans_video':
+    elif request=='trans_video' or request=='trans':
         folder=str(int(time.time()))
         os.system('mkdir %s'%(folder))
         for device_name in name_list:

@@ -22,28 +22,16 @@ if __name__=='__main__':
     assert device_name in device_list
     device_id=device_dict[device_name]
     if device_name in ['C7', 'C8', 'C9']:
+        text='adb -s %s shell am start -a android.media.action.VIDEO_CAPTURE'%(device_id)
+        os.system(text)
+        time.sleep(3)
         text='adb -s %s shell input keyevent 24'%(device_id)
         os.system(text)
-        time.sleep(2)
-        text='adb -s %s shell input keyevent 24'%(device_id)
-        os.system(text)
-        #time.sleep(2)
-        #text='adb -s %s shell input keyevent 3'%(device_id)
-        #text='adb -s %s shell input tap 980 2400'%(device_id)
-        #os.system(text)
-        # time.sleep(1)
-        # text='adb -s %s shell input keyevent 3'%(device_id)
-        # os.system(text)
     else:
+        text='adb -s %s shell am start -a android.media.action.VIDEO_CAPTURE'%(device_id)
+        os.system(text)
+        time.sleep(3)
         text='adb -s %s shell input keyevent 24'%(device_id)
         os.system(text)
-        time.sleep(2)
-        text='adb -s %s shell input keyevent 24'%(device_id)
-        os.system(text)
-
-    time.sleep(5)
-    # list video
-    text='adb -s %s shell ls -l mnt/sdcard/DCIM/Camera'%(device_id)
-    seg=text.split(' ')
-    out_value='\n\n'+device_name+':\n'+subprocess.check_output(seg).decode('utf-8')
-    print(out_value)
+    #seg=text.split(' ')
+    #processes.add(subprocess.Popen(seg))
