@@ -23,8 +23,9 @@ if __name__=='__main__':
     device_id=device_dict[device_name]
     if device_name in ['C7', 'C8', 'C9']:
         text='adb -s %s shell am start -a android.media.action.VIDEO_CAPTURE'%(device_id)
-         # text='adb -s %s shell am start -a android.media.action.VIDEO_CAMERA'%(device_id)
+        #text='adb -s %s shell am start -a android.media.action.VIDEO_CAMERA'%(device_id)
         os.system(text)
+
     else:
         text='adb -s %s shell am start -a android.media.action.VIDEO_CAPTURE'%(device_id)
         os.system(text)
